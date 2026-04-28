@@ -429,7 +429,7 @@ CERTIFICATIONS
                 <img src="/profile.jpg" alt="Muhammad Ahmad" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-2 -right-2 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                Data Scientist
+                AI & ML Engineer
               </div>
             </div>
 

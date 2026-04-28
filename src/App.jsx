@@ -453,7 +453,7 @@ CERTIFICATIONS
   <span className="text-yellow-400 font-semibold">SQL</span>,{' '}
   <span className="text-purple-400 font-semibold">PyTorch</span>,{' '}
   <span className="text-rose-400 font-semibold">XGBoost</span>, and{' '}
-  <span className="text-violet-400 font-semibold">HuggingFace Transformers</span> — skilled in{' '}
+  <span className="text-violet-400 font-semibold">HuggingFace Transformers</span> ,skilled in{' '}
   <span className="text-pink-400 font-semibold">fine-tuning LLMs</span>, designing{' '}
   <span className="text-orange-400 font-semibold">data warehouses</span>, and building{' '}
   <span className="text-teal-400 font-semibold">interactive Power BI dashboards</span>. Currently pursuing a Bachelor's in{' '}

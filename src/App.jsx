@@ -442,11 +442,27 @@ CERTIFICATIONS
                 </span>
               </h1>
               <p className={`text-xl md:text-2xl text-blue-300 mb-6 transition-all duration-1000 ${isTypingComplete ? 'opacity-100' : 'opacity-0'}`}>
-                Aspiring Data Scientist
+                AI & ML Engineer
               </p>
               <p className={`text-base text-slate-300 max-w-2xl mb-6 leading-relaxed transition-all duration-1000 ${isTypingComplete ? 'opacity-100' : 'opacity-0'}`}>
-                Passionate <span className="text-blue-400 font-semibold">Data Scientist</span> with expertise in building <span className="text-cyan-400 font-semibold">end-to-end machine learning solutions</span> and extracting <span className="text-emerald-400 font-semibold">meaningful insights</span> from complex datasets. Experienced in developing <span className="text-indigo-400 font-semibold">predictive models</span>, creating <span className="text-violet-400 font-semibold">interactive dashboards</span>, and implementing <span className="text-rose-400 font-semibold">data-driven strategies</span>. Proficient in <span className="text-green-400 font-semibold">Python</span>, <span className="text-yellow-400 font-semibold">SQL</span>, and modern ML frameworks like <span className="text-purple-400 font-semibold">PyTorch</span>. Skilled in transforming raw data into <span className="text-orange-400 font-semibold">actionable business intelligence</span> through <span className="text-pink-400 font-semibold">advanced analytics</span>, <span className="text-teal-400 font-semibold">feature engineering</span>, and <span className="text-sky-400 font-semibold">visualization techniques</span>. Currently pursuing a Bachelor's in <span className="text-blue-300 font-semibold">Data Science</span> at <span className="text-cyan-300 font-semibold">FAST-NUCES</span> while gaining hands-on experience through real-world projects and internships.
-              </p>
+  <span className="text-blue-400 font-semibold">AI & ML Engineer</span> with hands-on experience in building{' '}
+  <span className="text-cyan-400 font-semibold">end-to-end machine learning solutions</span>,{' '}
+  <span className="text-emerald-400 font-semibold">NLP systems</span>, and{' '}
+  <span className="text-indigo-400 font-semibold">explainable AI applications</span>. Proficient in{' '}
+  <span className="text-green-400 font-semibold">Python</span>,{' '}
+  <span className="text-yellow-400 font-semibold">SQL</span>,{' '}
+  <span className="text-purple-400 font-semibold">PyTorch</span>,{' '}
+  <span className="text-rose-400 font-semibold">XGBoost</span>, and{' '}
+  <span className="text-violet-400 font-semibold">HuggingFace Transformers</span> — skilled in{' '}
+  <span className="text-pink-400 font-semibold">fine-tuning LLMs</span>, designing{' '}
+  <span className="text-orange-400 font-semibold">data warehouses</span>, and building{' '}
+  <span className="text-teal-400 font-semibold">interactive Power BI dashboards</span>. Currently pursuing a Bachelor's in{' '}
+  <span className="text-blue-300 font-semibold">Data Science</span> at{' '}
+  <span className="text-cyan-300 font-semibold">FAST-NUCES Lahore</span>, building real-world AI solutions including a{' '}
+  <span className="text-sky-400 font-semibold">car price predictor with SHAP explainability</span>, an{' '}
+  <span className="text-emerald-300 font-semibold">NLP emotion detector</span>, and a{' '}
+  <span className="text-indigo-300 font-semibold">retail data warehouse with 98% query speedup</span>.
+</p>
 
               <div className={`flex gap-4 transition-all duration-1000 ${isTypingComplete ? 'opacity-100' : 'opacity-0'}`}>
                 <a 

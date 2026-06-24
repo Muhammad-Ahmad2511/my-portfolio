@@ -123,6 +123,12 @@ export default function Portfolio() {
       github: "https://github.com/Muhammad-Ahmad2511/retail-inventory-analytics-bi"
     },
     {
+  title: "Real-Time MERN Chat Infrastructure",
+  tech: "MongoDB, Express.js, React, Node.js, Socket.io, JWT",
+  description: "Engineered a decoupled full-stack chat application from scratch to establish core bi-directional communication channels, serving as the foundational architectural layer for upcoming enterprise RAG systems.",
+  github: "https://github.com/Muhammad-Ahmad2511/DevNauts-Training"
+    },
+    {
       title: "Eco Friendly Habit Tracker",
       tech: "C#",
       description: "Developed a habit tracking app with user authentication, progress charts, reminders, and streak-based motivation features.",

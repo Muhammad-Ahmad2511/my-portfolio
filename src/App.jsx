@@ -133,14 +133,13 @@ export default function Portfolio() {
 
   const skills = {
     "Programming": ["C", "C++", "Python", "C#", "SQL"],
-    "ML / AI": ["Regression", "Classification", "Clustering", "Dimensionality Reduction", "Feature Engineering", "Data Mining", "NLP"],
-    "EDA / Analysis": ["Exploratory Data Analysis", "Data Cleaning", "Statistical Analysis", "Probabilistic Analysis", "Image Processing"],
-    "Data / DB": ["PostgreSQL", "SQL Server", "Data Warehousing", "ETL", "SQL Optimization"],
-    "Visualization": ["Matplotlib", "Seaborn", "Power BI", "Tableau"],
-    "Deep Learning": ["PyTorch", "ANN", "RNN"],
-    "Tools": ["Jupyter", "VS Code", "Visual Studio", "Google Colab", "Git/GitHub"],
-    "Soft Skills": ["Analytical Thinking", "Collaboration", "Adaptability", "Problem Solving"],
-    "Other": ["Web Scraping", "Microsoft Office"]
+    "ML / AI": ["Regression", "Classification", "Clustering", "Dimensionality Reduction", "Feature Engineering", "Data Mining", "Web Scraping"],
+    "NLP & Large Language Models": ["Hugging Face", "Transformers", "Flan-T5", "DistilBERT", "LLM Fine-tuning", "Zero-shot", "Few-shot", "RAG"],
+    "Deep Learning & Computer Vision": ["PyTorch (ANN, RNN, CNN)", "OpenCV", "Image Processing", "CNN-based Models", "Object Detection"],
+    "Explainable AI & Data Analysis": ["SHAP", "XAI", "Feature Importance", "Association Rules", "Pattern Discovery", "Time-Series Analysis", "Exploratory Data Analysis", "Data Cleaning", "Statistical Analysis", "Probabilistic Analysis", "Scikit-learn"],
+    "Data, Databases & Web Backend": ["PostgreSQL", "SQL Server", "MongoDB", "Data Warehousing", "ETL", "SQL Optimization", "Node.js", "Express", "Socket.io"],
+    "Visualization & UI": ["React", "Matplotlib", "Seaborn", "Power BI (DAX)", "Tableau"],
+    "Tools & Engineering Workflow": ["Jupyter", "VS Code", "Visual Studio", "Google Colab", "Git/GitHub", "Streamlit", "ChatGPT", "Claude", "GitHub Copilot"]
   };
 
   const handleDownloadCV = () => {

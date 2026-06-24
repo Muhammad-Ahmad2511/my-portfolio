@@ -678,7 +678,9 @@ export default function Portfolio() {
       {/* ── NAV ── */}
       <nav className="nav">
         <div className="nav-inner">
-          <span className="nav-logo">MA</span>
+          <span className="nav-logo font-bold tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Muhammad Ahmad
+          </span>
           <div className="nav-links">
             {['About', 'Experience', 'Projects', 'Skills', 'Education', 'FAQs', 'Contact'].map(item => (
               <button

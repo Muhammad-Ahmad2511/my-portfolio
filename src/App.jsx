@@ -80,6 +80,31 @@ export default function Portfolio() {
 
   const projects = [
     {
+    title: "PakWheels Used Car Price Predictor",
+    tech: "Python, LightGBM, Streamlit, SHAP",
+    description: "Built an AI-powered price prediction system for Pakistan's used car market featuring Explainable AI (XAI) via SHAP integration and real-time data scraping from PakWheels.",
+    github: "https://github.com/Muhammad-Ahmad2511/used-car-price-predictor"
+    },
+    {
+    title: "AI-Powered Support Ticket Triage System",
+    tech: "Python, Flask, ChromaDB, Llama 3.3 (Groq API)",
+    description: "Built an end-to-end automation pipeline utilizing a local ChromaDB-backed RAG architecture and structured Prompt Engineering to dynamically classify support tickets and generate grounded draft responses.",
+    github: "https://github.com/Muhammad-Ahmad2511/support-triage-project"
+   },
+   {
+  title: "Emotion Detection in Social Media Text using Small LLMs",
+  tech: "Python, PyTorch, HuggingFace Transformers, Flan-T5, DistilBERT",
+  description: "Conducted a systematic comparison of zero-shot, few-shot, and fine-tuning prompt strategies for multi-class emotion detection on Google's GoEmotions dataset using models under 500M parameters.",
+  github: "https://github.com/Muhammad-Ahmad2511/emotion-detection-small-llms"
+  },
+  {
+  title: "Sales Trend Analysis — Superstore Dataset",
+  tech: "Python, STL Decomposition, ACF/PACF, Statsmodels, Scikit-learn",
+  description: "Performed end-to-end time-series analysis and forecasting on retail transactions to isolate seasonal patterns, moving average demand trends, and regional performance.",
+  github: "https://github.com/Muhammad-Ahmad2511/sales-trend-analysis"
+  }
+   ,
+    {
       title: "Adult Income Prediction Model",
       tech: "Python, Machine Learning",
       description: "Created an ML model using preprocessing and feature engineering to predict income levels with high accuracy.",
@@ -92,17 +117,18 @@ export default function Portfolio() {
       github: "https://github.com/Muhammad-Ahmad2511/Electronics-Inventory-Management-Dashboard"
     },
     {
-      title: "Eco Friendly Habit Tracker",
-      tech: "C#",
-      description: "Developed a habit tracking app with user authentication, progress charts, reminders, and streak-based motivation features.",
-      github: "https://github.com/Muhammad-Ahmad2511/Eco-friendly-habit-tracker"
-    },
-    {
       title: "Retail Inventory Analytics & Business Intelligence",
       tech: "ETL, Data Warehousing, BI Dashboards",
       description: "Designed a data warehouse and BI solution to analyze retail sales, inventory levels, pricing, discounts, seasonality, and regional performance using ETL pipelines and interactive dashboards.",
       github: "https://github.com/Muhammad-Ahmad2511/retail-inventory-analytics-bi"
+    },
+    {
+      title: "Eco Friendly Habit Tracker",
+      tech: "C#",
+      description: "Developed a habit tracking app with user authentication, progress charts, reminders, and streak-based motivation features.",
+      github: "https://github.com/Muhammad-Ahmad2511/Eco-friendly-habit-tracker"
     }
+    
   ];
 
   const skills = {

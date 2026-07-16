@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { Github, Linkedin, Mail, Award, Briefcase, GraduationCap, Code, Brain, Menu, X, Download, ChevronDown } from 'lucide-react';
-
+import { Github, Linkedin, Mail, Award, Briefcase, GraduationCap, Code, Brain, Menu, X, Download } from 'lucide-react';
 // ─── ENHANCEMENT 3A: Filter config — categories mapped to each project ────────
-const CATEGORIES = ['All', 'Generative AI / NLP', 'Machine Learning', 'Business Intelligence'];
-
+const CATEGORIES = ['All', 'Generative AI / NLP', 'Machine Learning', 'Data Engineering & Analytics', 'Full Stack Development'];
 const ALL_PROJECTS = [
   {
     title: "PakWheels Used Car Price Predictor",
@@ -35,58 +33,42 @@ const ALL_PROJECTS = [
     category: "Machine Learning"
   },
   {
-    title: "Adult Income Prediction Model",
-    tech: "Python, Machine Learning",
-    description: "Created an ML model using preprocessing and feature engineering to predict income levels with high accuracy.",
-    github: "https://github.com/Muhammad-Ahmad2511/ML-Project-for-Income-prediction",
-    category: "Machine Learning"
-  },
-  {
     title: "Electronics Inventory Management Dashboard",
     tech: "Power BI",
     description: "Designed an interactive dashboard displaying stock levels, shortages, and inventory trends for data-driven decision making.",
     github: "https://github.com/Muhammad-Ahmad2511/Electronics-Inventory-Management-Dashboard",
-    category: "Business Intelligence"
+    category: "Data Engineering & Analytics"
   },
   {
     title: "Retail Inventory Analytics & Business Intelligence",
     tech: "ETL, Data Warehousing, BI Dashboards",
     description: "Designed a data warehouse and BI solution to analyze retail sales, inventory levels, pricing, discounts, seasonality, and regional performance using ETL pipelines and interactive dashboards.",
     github: "https://github.com/Muhammad-Ahmad2511/retail-inventory-analytics-bi",
-    category: "Business Intelligence"
+    category: "Data Engineering & Analytics"
   },
   {
     title: "Real-Time MERN Chat Infrastructure",
     tech: "MongoDB, Express.js, React, Node.js, Socket.io, JWT",
     description: "Engineered a decoupled full-stack chat application from scratch to establish core bi-directional communication channels, serving as the foundational architectural layer for upcoming enterprise RAG systems.",
     github: "https://github.com/Muhammad-Ahmad2511/DevNauts-Training",
-    category: "Generative AI / NLP"
+    category: "Full Stack Development"
   },
   {
-    title: "Eco Friendly Habit Tracker",
-    tech: "C#",
-    description: "Developed a habit tracking app with user authentication, progress charts, reminders, and streak-based motivation features.",
-    github: "https://github.com/Muhammad-Ahmad2511/Eco-friendly-habit-tracker",
-    category: "Machine Learning"
+    title: "DevNauts AI Proposal Builder (In Progress)",
+    tech: "Node.js, LangChain.js, Pinecone, Groq (Llama 4 Scout), RAG, Fine-Tuning",
+    description: "Building a chat-based proposal generation tool that combines RAG over a project knowledge base with a tone-tuned model to draft client proposals from a brief in DevNauts' writing voice.",
+    github: "https://github.com/idreesahmed1257/uw-proposal-builder",
+    category: "Full Stack Development"
   }
-];
-
-const FAQS = [
-  { q: "What services do you offer?", a: "Machine learning model development, data analysis, interactive dashboard creation and ETL pipeline design." },
-  { q: "What programming languages and tools do you use?", a: "I primarily work with Python, SQL, PyTorch for ML/AI, and Power BI/Tableau for visualizations." },
-  { q: "Are you available for freelance or contract work?", a: "Yes, I'm open to freelance projects, internships, and part-time opportunities while completing my degree." },
-  { q: "What types of projects have you worked on?", a: "Income prediction models, inventory management dashboards, habit tracking apps, and business intelligence solutions with real-world data." },
-  { q: "How long does a typical project take?", a: "Project timelines vary based on scope, but most small to medium projects take 2–4 weeks from kickoff to delivery." },
-  { q: "How can I get in touch with you?", a: "You can email me at mahmadimran383@gmail.com, connect on LinkedIn, or schedule a call directly through the contact section." }
 ];
 
 const skills = {
   "Programming": ["C", "C++", "Python", "C#", "SQL"],
-  "ML / AI": ["Regression", "Classification", "Clustering", "Dimensionality Reduction", "Feature Engineering", "Data Mining", "Web Scraping"],
-  "NLP & Large Language Models": ["Hugging Face", "Transformers", "Flan-T5", "DistilBERT", "LLM Fine-tuning", "Zero-shot", "Few-shot", "RAG"],
-  "Deep Learning & Computer Vision": ["PyTorch (ANN, RNN, CNN)", "OpenCV", "Image Processing", "CNN-based Models", "Object Detection"],
-  "Explainable AI & Data Analysis": ["SHAP", "XAI", "Feature Importance", "Association Rules", "Pattern Discovery", "Time-Series Analysis", "EDA", "Data Cleaning", "Statistical Analysis", "Scikit-learn"],
-  "Data, Databases & Web Backend": ["PostgreSQL", "SQL Server", "MongoDB", "Data Warehousing", "ETL", "SQL Optimization", "Node.js", "Express", "Socket.io"],
+  "ML / AI": ["Regression", "Classification", "Clustering", "Dimensionality Reduction", "Feature Engineering", "Web Scraping", "LightGBM", "XGBoost"],
+  "NLP & Large Language Models": ["Hugging Face", "Transformers", "Flan-T5", "DistilBERT", "LLM Fine-tuning",  "Prompt Engineering", "RAG", "LangChain", "Pinecone", "ChromaDB", "Groq API"],
+  "Deep Learning": ["PyTorch (ANN, RNN, CNN)"],
+  "Explainable AI & Data Analysis": ["SHAP", "XAI", "Feature Importance", "Time-Series Analysis", "EDA", "Data Cleaning", "Statistical Analysis", "Scikit-learn"],
+  "Data, Databases & Web Backend": ["SQL Server","PostgreSQL", "MongoDB", "Data Warehousing", "ETL", "SQL Optimization", "Node.js", "Express", "Socket.io", "JWT", "API Integration"],
   "Visualization & UI": ["React", "Matplotlib", "Seaborn", "Power BI (DAX)", "Tableau"],
   "Tools & Engineering Workflow": ["Jupyter", "VS Code", "Google Colab", "Git/GitHub", "Streamlit", "ChatGPT", "Claude", "GitHub Copilot"]
 };
@@ -133,23 +115,8 @@ function CyclingTypewriter({ strings, typingSpeed = 80, deletingSpeed = 45, paus
   );
 }
 
-// ─── ENHANCEMENT 3B: Accordion FAQ Item ──────────────────────────────────────
-function AccordionItem({ q, a, isOpen, onToggle }) {
-  return (
-    <div
-      className={`faq-item ${isOpen ? 'faq-open' : ''}`}
-      onClick={onToggle}
-    >
-      <div className="faq-header">
-        <span className="faq-question">{q}</span>
-        <span className={`faq-icon ${isOpen ? 'faq-icon-open' : ''}`}>+</span>
-      </div>
-      <div className={`faq-body ${isOpen ? 'faq-body-open' : ''}`}>
-        <p className="faq-answer">{a}</p>
-      </div>
-    </div>
-  );
-}
+
+
 
 // ─── ENHANCEMENT 2A/2B: Staggered Project Grid ───────────────────────────────
 function ProjectGrid({ projects }) {
@@ -223,8 +190,6 @@ export default function Portfolio() {
     ? ALL_PROJECTS
     : ALL_PROJECTS.filter(p => p.category === activeFilter);
 
-  // Enhancement 3B — accordion open state
-  const [openFaq, setOpenFaq] = useState(null);
 
   // Particles
   useEffect(() => {
@@ -584,36 +549,6 @@ export default function Portfolio() {
         .cert-platform { font-size: 0.8rem; color: var(--text-muted); }
         .cert-link { font-size: 0.8rem; color: var(--accent-cyan); margin-top: auto; }
 
-        /* ── ENHANCEMENT 3B: Accordion FAQ ── */
-        .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
-        .faq-item {
-          background: var(--bg-card); border: 1px solid var(--border);
-          border-radius: 14px; overflow: hidden; cursor: pointer;
-          transition: border-color 0.22s, box-shadow 0.22s;
-        }
-        .faq-item.faq-open, .faq-item:hover {
-          border-color: rgba(6,182,212,0.45);
-          box-shadow: 0 0 18px rgba(6,182,212,0.1);
-        }
-        .faq-header {
-          display: flex; justify-content: space-between; align-items: center;
-          padding: 1.1rem 1.4rem;
-          user-select: none;
-        }
-        .faq-question { font-size: 0.97rem; font-weight: 600; color: var(--text-main); }
-        .faq-icon {
-          font-size: 1.5rem; color: var(--accent-cyan); font-weight: 300; flex-shrink: 0;
-          transition: transform 0.3s ease, color 0.2s;
-          line-height: 1;
-        }
-        .faq-icon-open { transform: rotate(45deg); color: var(--neon-start); }
-        .faq-body {
-          max-height: 0; overflow: hidden;
-          transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1);
-        }
-        .faq-body-open { max-height: 160px; }
-        .faq-answer { padding: 0 1.4rem 1.2rem; color: var(--text-muted); font-size: 0.91rem; line-height: 1.7; }
-
         /* ── Contact ── */
         .contact-section { text-align: center; }
         .contact-heading { font-size: 2rem; font-weight: 800; margin-bottom: 0.75rem; }
@@ -682,7 +617,7 @@ export default function Portfolio() {
             Muhammad Ahmad
           </span>
           <div className="nav-links">
-            {['About', 'Experience', 'Projects', 'Skills', 'Education', 'FAQs', 'Contact'].map(item => (
+            {['About', 'Experience', 'Projects', 'Skills', 'Education', 'Contact'].map(item => (
               <button
                 key={item}
                 className={`nav-link ${activeSection === item.toLowerCase() ? 'active' : ''}`}
@@ -701,7 +636,7 @@ export default function Portfolio() {
         </div>
         {mobileMenuOpen && (
           <div className="mobile-menu">
-            {['About', 'Experience', 'Projects', 'Skills', 'Education', 'FAQs', 'Contact'].map(item => (
+            {['About', 'Experience', 'Projects', 'Skills', 'Education', 'Contact'].map(item => (
               <button key={item} className="nav-link" onClick={() => scrollTo(item.toLowerCase())}>{item}</button>
             ))}
             <button onClick={handleDownloadCV} className="btn-outline" style={{ width: 'fit-content' }}>
@@ -860,24 +795,6 @@ export default function Portfolio() {
                 </div>
                 <p className="cert-link">View Certificate →</p>
               </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── FAQS ── ENHANCEMENT 3B: Accordion ── */}
-      <section id="faqs" className="section">
-        <div className="section-inner">
-          <h2 className="section-heading" style={{ justifyContent: 'center' }}>Frequently Asked Questions</h2>
-          <div className="faq-list">
-            {FAQS.map((item, i) => (
-              <AccordionItem
-                key={i}
-                q={item.q}
-                a={item.a}
-                isOpen={openFaq === i}
-                onToggle={() => setOpenFaq(openFaq === i ? null : i)}
-              />
             ))}
           </div>
         </div>
